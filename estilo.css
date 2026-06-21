@@ -94,7 +94,7 @@ body {
       padding: 20px 0;
     }
 
-    .cards p {
+    section p.titulo {
       grid-column: 1 / -1;
       font-size: 1.5em;
       font-weight: 600;
