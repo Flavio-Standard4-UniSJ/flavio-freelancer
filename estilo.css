@@ -1,0 +1,158 @@
+body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7fafc;
+      color: #1a202c;
+    }
+    header {
+      background: linear-gradient(to right, #4FD1C5, #319795);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .wrap {
+      background-color: #e2e8f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #4a5568;
+    }
+    .cta {
+      margin-top: 30px;
+    }
+    .cta a {
+      background-color: #2c7a7b;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1em;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .cta a:hover {
+      background-color: #285e61;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .linkedin-btn {
+      display: inline-block;
+      margin-top: 20px;
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .linkedin-btn:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #e2e8f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #4a5568;
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+    .whatsapp-float img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(31, 41, 55, 0.08);
+      padding: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+      color: #2d3748;
+    }
+
+    .card p {
+      margin: 0;
+      color: #4a5568;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 50px rgba(31, 41, 55, 0.14);
+    }
+
+    @media (max-width: 960px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      header {
+        padding: 40px 16px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p,
+      .wrap,
+      .section {
+        font-size: 1rem;
+      }
+
+      .cta a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
