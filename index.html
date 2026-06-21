@@ -50,11 +50,57 @@
     </div>
   </section>
 
-  <section>
-    <div class="section">
-      <p>Conecte-se comigo no <a class="linkedin-btn" href="https://www.linkedin.com/in/flavio-silva-sales" target="_blank">LinkedIn</a></p>
+  <section class="testimonials-section">
+    <div class="wrap">
+      <h2>O que dizem de nós</h2>
+      <p class="section-intro">Depoimentos reais do Google podem ser exibidos aqui quando houver uma integração segura entre o site e a API de avaliações.</p>
+      <div id="google-testimonials" class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">Carregando depoimentos reais do Google...</p>
+        </div>
+      </div>
     </div>
   </section>
+      <p class="section-intro">Depoimentos reais do Google podem ser exibidos aqui quando houver uma integração segura entre o site e a API de avaliações.</p>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('google-testimonials');
+      const apiUrl = '/api/google-reviews';
+
+      fetch(apiUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Falha ao carregar avaliações');
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (!Array.isArray(data.reviews) || data.reviews.length === 0) {
+            container.innerHTML = '<div class="testimonial-card"><p class="testimonial-text">Nenhum depoimento disponível no momento.</p></div>';
+            return;
+          }
+
+          container.innerHTML = data.reviews.slice(0, 3).map(review => {
+            const rating = Math.round(review.rating || 5);
+            const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+            const author = review.author_name || review.author || 'Cliente satisfeito';
+            return `
+              <div class="testimonial-card">
+                <p class="testimonial-text">${review.text}</p>
+                <div class="testimonial-footer">
+                  <span class="testimonial-client">${author}</span>
+                  <div class="review-stars">${stars}</div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        })
+        .catch(error => {
+          container.innerHTML = '<div class="testimonial-card"><p class="testimonial-text">Ainda não foi possível carregar comentários reais.</p></div>';
+          console.warn('Não foi possível carregar os depoimentos do Google:', error);
+        });
+    });
+  </script>
 
   <footer>
      <script>document.write(new Date().getFullYear());</script> Flávio Sales - Web developer &copy;
@@ -66,3 +112,4 @@
 
 </body>
 </html>
+
