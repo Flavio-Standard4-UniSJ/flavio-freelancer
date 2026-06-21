@@ -94,6 +94,15 @@ body {
       padding: 20px 0;
     }
 
+    .cards p {
+      grid-column: 1 / -1;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #7c4a4a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
     .card {
       background-color: white;
       border-radius: 18px;
@@ -115,6 +124,7 @@ body {
 
     .card p {
       margin: 0;
+      font-size: 1rem;
       color: #4a5568;
       line-height: 1.7;
       flex: 1;
